@@ -1,0 +1,64 @@
+body {
+	font-size: 12px;
+}
+
+a,
+p,
+div {
+	font-family: Montserrat;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: rgba(255, 255, 255, 1);
+	font-size: 11px;
+	letter-spacing: 0.8px;
+	font-weight: 300;
+}
+
+.navbar-nav.d-flex li {
+	margin: auto
+}
+
+header .navbar {
+	position: relative;
+	z-index: 10;
+}
+
+.orangea-logo {}
+
+.orangea-logo img {}
+
+.orangea-logo a {}
+
+.hf-container {
+	height: calc(100vh - 18rem);
+	width: 100%;
+}
+
+.hf-container-slider {
+	width: 100%;
+	/* height: calc(100vh - 18rem); */
+}
+
+.hf-container .hf-bg {
+	height: inherit;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+#content {
+	position: relative;
+	z-index: 10;
+}
+
+.orangea-logo {
+	display: block;
+}
+
+@media (max-width: 991px) {
+	.orangea-logo {
+		display: none;
+	}
+}
