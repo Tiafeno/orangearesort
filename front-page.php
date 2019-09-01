@@ -12,6 +12,11 @@ $results = new WP_Query($args_posts);
         min-height: 240px;
         position: relative;
     }
+
+    .section-bg-animate {
+        padding-bottom: 40px;
+    }
+
     #footer-container {
         background-color: black;
         min-height: 250px
