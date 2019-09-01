@@ -29,7 +29,8 @@ $results = new WP_Query($args_posts);
             var sectionBg = $('.section-bg-animate');
             sectionBg.each((index, element) => {
                 var data = $(element).data();
-                var galleries = data.galleries;
+                var galleries = _.isArray(data.galleries) ? data.galleries : [];
+                if (_.isEmpty(galleries)) return false;
                 $(element).parents('.section-container').css({
                     'min-height': 500,
                     'background': `transparent url(${galleries[0]}) no-repeat center center`,
@@ -128,9 +129,9 @@ $results = new WP_Query($args_posts);
                         }
                     <?php endif; ?>
 
-                    <?php if ($background_image): ?>
+                    <?php if ($background_image): $background_color = $background_color ? $background_color : "#ffffff"; ?>
                         #header_<?= $key ?> .section-content {
-                            background-image: url(<?= $background_image['url'] ?>) no-repeat center center;
+                            background: <?= $background_color ?> url(<?= $background_image['url'] ?>) no-repeat center center;
                             background-size: <?= $background_size ? $background_size : 'cover' ?>;
                         }
                     <?php endif; ?>
