@@ -1,6 +1,6 @@
         <footer>
             <div id="footer-container">
-                <div class="container mt-4">
+                <div class="container pt-4">
                     <div class="d-flex">
                         <div class="m-auto col-4 pt-4">
                             <p><strong>Pour des informations directes, n’hésitez pas à nous appeler ou à écrire directement aux adresses ci-dessous:</strong></p>
