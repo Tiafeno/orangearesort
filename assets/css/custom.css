@@ -24,11 +24,9 @@ header .navbar {
 	z-index: 10;
 }
 
-.orangea-logo {}
-
-.orangea-logo img {}
-
-.orangea-logo a {}
+.section-header-top, .section-header-bottom {
+	visibility: visible;
+}
 
 .hf-container {
 	height: calc(100vh - 18rem);
@@ -60,5 +58,11 @@ header .navbar {
 @media (max-width: 991px) {
 	.orangea-logo {
 		display: none;
+	}
+}
+
+@media (max-width: 650px) {
+	.section-header-top, .section-header-bottom {
+		visibility: hidden;
 	}
 }

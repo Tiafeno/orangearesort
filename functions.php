@@ -19,7 +19,7 @@ add_action('init', function () {
         wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.css', '', '4.3.1' );
         wp_enqueue_style( 'owlCarousel', get_stylesheet_directory_uri() . '/assets/owlcarousel/assets/owl.carousel.min.css', '', '2.0.0' );
         wp_enqueue_style( 'owlCarousel-default', get_stylesheet_directory_uri() . '/assets/owlcarousel/assets/owl.theme.default.min.css', '', '2.0.0' );
-        wp_enqueue_style( 'custom-orangea-resort', get_stylesheet_directory_uri() . '/assets/css/custom.css', '', '1.0.1' );
+        wp_enqueue_style( 'custom-orangea-resort', get_stylesheet_directory_uri() . '/assets/css/custom.css', '', '1.0.2' );
         wp_enqueue_style( 'style' );
 
         wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/vendors/bootstrap.min.js', ['jquery'], '4.3.1', true );
