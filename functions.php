@@ -50,4 +50,25 @@ add_action('init', function () {
 });
 
 
+add_action('after_setup_theme', function () {
+    load_theme_textdomain('twentyfifteen');
+    load_theme_textdomain(get_stylesheet_directory() . '/languages');
+  
+    /**
+     * This function will not resize your existing featured images.
+     * To regenerate existing images in the new size,
+     * use the Regenerate Thumbnails plugin.
+     */
+    set_post_thumbnail_size(50, 50, array(
+      'center',
+      'center'
+    )); // 50 pixels wide by 50 pixels tall, crop from the center
+  
+    // Register menu location
+    register_nav_menus(array(
+      'menu-principal' => 'Menu Principal',
+    ));
+  });
+
+
 

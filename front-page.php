@@ -172,14 +172,6 @@ $results = new WP_Query($args_posts);
         
         ?>
 
-        <footer>
-            <div id="footer-container">
-                <div class="container">
-                </div>
-            </div>
-        </footer>
-
-    </div>
-  </div>
+       
 <?php
 get_footer();
