@@ -1,8 +1,8 @@
         <footer>
             <div id="footer-container">
-                <div class="container pt-4">
+                <div class="container" style="padding-top: 9rem;">
                     <div class="d-flex">
-                        <div class="m-auto col-4 pt-4">
+                        <div class="m-auto col-md-4 pt-4">
                             <p><strong>Pour des informations directes, n’hésitez pas à nous appeler ou à écrire directement aux adresses ci-dessous:</strong></p>
                             <p>(+261) 34 07 300 04<br>
                             (+261) 32 07 300 10</p>
