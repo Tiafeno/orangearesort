@@ -31,12 +31,12 @@
 
 
 <?php wp_footer(); ?>
-<style type="text/css">
-    #footer-container {
-        color: white;
-        text-align: center;
-    }
-</style>
+    <style type="text/css">
+        #footer-container {
+            color: white;
+            text-align: center;
+        }
+    </style>
     
     </body>
 </html>

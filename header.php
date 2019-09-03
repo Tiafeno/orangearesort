@@ -31,13 +31,12 @@
    <meta charset="<?php bloginfo( 'charset' ); ?>">
    <meta name="msapplication-tap-highlight" content="no" />
    <meta name="viewport" content="width=600" />
+   <link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
    <meta name="msapplication-TileColor" content="#ffffff">
    <meta name="theme-color" content="#ffffff">
-   <meta name="description" content="Animate carousel">
-   <meta name="author" content="David Deutsch">
-   <title>
-      Ressort Orangea
-   </title>
+   <meta name="description" content="Orangea Hotel Resort">
+   <meta name="author" content="Falicrea (Tiafeno Finel)">
 
    <!-- Stylesheets -->
    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap" rel="stylesheet"
