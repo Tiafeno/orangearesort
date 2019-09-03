@@ -37,7 +37,7 @@
    <meta name="theme-color" content="#ffffff">
    <meta name="description" content="Orangea Hotel Resort">
    <meta name="author" content="Falicrea (Tiafeno Finel)">
-   <title><?php wp_title( '|', true, 'right' ); ?></title>
+   <title>Hotel Orangea Resort - Nosy Be</title>
    <!-- Stylesheets -->
    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap" rel="stylesheet"
       type='text/css'>
