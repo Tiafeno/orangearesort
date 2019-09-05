@@ -75,6 +75,8 @@
          _fixHeaderResponsive();
          _fixSectionHeader();
 
+         // Cette fonction permet de corriger le slider dans le header.
+         // 
          function _fixHeaderResponsive() {
             var container = $('.hf-container');
             var height = container.innerHeight();
@@ -105,6 +107,10 @@
             var container = $('#content');
             var height = container.innerHeight();
             var width = container.innerWidth();
+
+            /**
+             * Permet de corriger la forme wave des sections (en haut)
+             */
             $('.section-header-top').find('img').each(function (index, el) {
                var imgWidth;
                var imgHeight;
@@ -121,6 +127,9 @@
                }
             });
 
+            /**
+             * Permet de corriger la forme wave des sections (en bas)
+             */
             $('.section-header-bottom').find('img').each(function (index, el) {
                var imgWidth;
                var imgHeight;
