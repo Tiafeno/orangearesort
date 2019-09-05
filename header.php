@@ -70,10 +70,8 @@
          });
          $(window).resize(function () {
             _fixHeaderResponsive();
-            _fixSectionHeader();
          });
          _fixHeaderResponsive();
-         _fixSectionHeader();
 
          // Cette fonction permet de corriger le slider dans le header.
          // 
@@ -102,53 +100,37 @@
                img.src = $(el).attr('src');
             });
          }
-
-         function _fixSectionHeader() {
-            var container = $('#content');
-            var height = container.innerHeight();
-            var width = container.innerWidth();
-
-            /**
-             * Permet de corriger la forme wave des sections (en haut)
-             */
-            $('.section-header-top').find('img').each(function (index, el) {
-               var imgWidth;
-               var imgHeight;
-
-               imgHeight = $(el).innerHeight();
-               imgWidth = $(el).innerWidth();
-               if (width > imgWidth) {
-                  var finalHeight = (width * imgHeight) / imgWidth;
-                  $(el).css({
-                     'width': width,
-                     'height': parseInt(finalHeight, 10) + 1,
-                     'top': - (parseInt(finalHeight, 10) - 1) + 'px'
-                  });
-               }
-            });
-
-            /**
-             * Permet de corriger la forme wave des sections (en bas)
-             */
-            $('.section-header-bottom').find('img').each(function (index, el) {
-               var imgWidth;
-               var imgHeight;
-
-               imgHeight = $(el).innerHeight();
-               imgWidth = $(el).innerWidth();
-               if (width > imgWidth) {
-                  var finalHeight = (width * imgHeight) / imgWidth;
-                  $(el).css({
-                     'width': width,
-                     'height': parseInt(finalHeight, 10) + 1,
-                     'bottom': - (parseInt(finalHeight, 10) - 1) + 'px'
-                  });
-               }
-            });
-            
-         }
+         
       });
    </script>
+
+   <style>
+   .preload-backdrop {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background-color: rgb(255, 255, 255);
+   }
+
+   .preload-body {
+      overflow-y: hidden;
+   }
+
+   .page-preload {
+      background: transparent url(https://cdn.dribbble.com/users/107759/screenshots/2436386/copper-loader.gif) no-repeat center center;
+      position: fixed;
+      z-index: 1000;
+      height: 100vh;
+      width: 100%;
+   }
+   </style>
 </head>
 
 <body <?php body_class(); ?>>
+   <div class="preload-backdrop">
+      <div class="page-preload">
+      </div>
+   </div>
