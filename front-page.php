@@ -1,14 +1,12 @@
 <?php
 get_header();
 
-$lang = function_exists('pll_current_languag') ? pll_current_languag('slug') : 'fr';
 $sections = get_field('sections', 'options');
 $args_posts = [
     'post_type' => 'post', 
     'posts_per_page' => -1, 
     'orderby' => 'title', 
-    'order' => 'ASC',
-    'lang' => $lang
+    'order' => 'ASC'
 ];
 $results = new WP_Query($args_posts);
 
