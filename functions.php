@@ -33,7 +33,7 @@ add_action('init', function () {
 
 
     /**
-     * wp-configs.php 
+     * + wp-configs.php 
      * define('ALLOW_UNFILTERED_UPLOADS', true);
      */
     add_filter( 'upload_mimes', function ($mimes) {
