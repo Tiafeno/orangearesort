@@ -46,12 +46,12 @@ $results = new WP_Query($args_posts);
                     let index = _.random(0, galleries.length - 1);
                     let url = galleries[index];
                     let parentSection = $(element).parents('.section-container');
-                    parentSection.fadeTo('slow', 0.3, function(){
+                    parentSection.fadeTo('slow', 0.5, function(){
                         $(this).css({
                             'background': `transparent url(${url}) no-repeat center center`,
                             'background-size': 'cover'
                         });
-                    });
+                    }).fadeTo('slow', 1);
                     
                 }, 2000);
             });
