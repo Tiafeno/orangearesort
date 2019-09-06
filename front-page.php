@@ -45,10 +45,14 @@ $results = new WP_Query($args_posts);
                 setInterval(() => {
                     let index = _.random(0, galleries.length - 1);
                     let url = galleries[index];
-                    $(element).parents('.section-container').css({
-                        'background': `transparent url(${url}) no-repeat center center`,
-                        'background-size': 'cover'
-                    });
+                    let parentSection = $(element).parents('.section-container');
+                    parentSection.fadeTo('slow', 0.3, function(){
+                        $(this).css({
+                            'background': `transparent url(${url}) no-repeat center center`,
+                            'background-size': 'cover'
+                        });
+                    }).fadeTo('slow', 1);
+                    
                 }, 2000);
             });
         })
