@@ -51,7 +51,7 @@ $results = new WP_Query($args_posts);
                             'background': `transparent url(${url}) no-repeat center center`,
                             'background-size': 'cover'
                         });
-                    }).fadeTo('slow', 1);
+                    });
                     
                 }, 2000);
             });
