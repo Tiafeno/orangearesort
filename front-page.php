@@ -16,6 +16,8 @@ $results = new WP_Query($args_posts);
     .section-container {
         min-height: 240px;
         position: relative;
+        transition: background 1.5s linear;
+        -webkit-transition: background 1.5s linear;
     }
 
     .section-bg-animate {
@@ -46,12 +48,12 @@ $results = new WP_Query($args_posts);
                     let index = _.random(0, galleries.length - 1);
                     let url = galleries[index];
                     let parentSection = $(element).parents('.section-container');
-                    parentSection.fadeTo('slow', 0.5, function(){
-                        $(this).css({
+                    //parentSection.fadeTo('slow', 0.5, function(){
+                        parentSection.css({
                             'background': `transparent url(${url}) no-repeat center center`,
                             'background-size': 'cover'
                         });
-                    }).fadeTo('slow', 1);
+                    //}).fadeTo('slow', 1);
                     
                 }, 2000);
             });
