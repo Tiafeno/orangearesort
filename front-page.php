@@ -55,7 +55,7 @@ $results = new WP_Query($args_posts);
                         });
                     //}).fadeTo('slow', 1);
                     
-                }, 2000);
+                }, 5000);
             });
         })
     })(jQuery);
