@@ -31,14 +31,13 @@
    <meta charset="<?php bloginfo( 'charset' ); ?>">
    <meta name="msapplication-tap-highlight" content="no" />
    <meta name="viewport" content="width=600" />
+   <link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
    <meta name="msapplication-TileColor" content="#ffffff">
    <meta name="theme-color" content="#ffffff">
-   <meta name="description" content="Animate carousel">
-   <meta name="author" content="David Deutsch">
-   <title>
-      Ressort Orangea
-   </title>
-
+   <meta name="description" content="Orangea Hotel Resort">
+   <meta name="author" content="Falicrea (Tiafeno Finel)">
+   <title>Hotel Orangea Beach Resort - Nosy Be</title>
    <!-- Stylesheets -->
    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap" rel="stylesheet"
       type='text/css'>
@@ -71,11 +70,11 @@
          });
          $(window).resize(function () {
             _fixHeaderResponsive();
-            _fixSectionHeader();
          });
          _fixHeaderResponsive();
-         _fixSectionHeader();
 
+         // Cette fonction permet de corriger le slider dans le header.
+         // 
          function _fixHeaderResponsive() {
             var container = $('.hf-container');
             var height = container.innerHeight();
@@ -101,46 +100,37 @@
                img.src = $(el).attr('src');
             });
          }
-
-         function _fixSectionHeader() {
-            var container = $('#content');
-            var height = container.innerHeight();
-            var width = container.innerWidth();
-            $('.section-header-top').find('img').each(function (index, el) {
-               var imgWidth;
-               var imgHeight;
-
-               imgHeight = $(el).innerHeight();
-               imgWidth = $(el).innerWidth();
-               if (width > imgWidth) {
-                  var finalHeight = (width * imgHeight) / imgWidth;
-                  $(el).css({
-                     'width': width,
-                     'height': parseInt(finalHeight, 10) + 1,
-                     'top': - (parseInt(finalHeight, 10) - 1) + 'px'
-                  });
-               }
-            });
-
-            $('.section-header-bottom').find('img').each(function (index, el) {
-               var imgWidth;
-               var imgHeight;
-
-               imgHeight = $(el).innerHeight();
-               imgWidth = $(el).innerWidth();
-               if (width > imgWidth) {
-                  var finalHeight = (width * imgHeight) / imgWidth;
-                  $(el).css({
-                     'width': width,
-                     'height': parseInt(finalHeight, 10) + 1,
-                     'bottom': - (parseInt(finalHeight, 10) - 1) + 'px'
-                  });
-               }
-            });
-            
-         }
+         
       });
    </script>
+
+   <style>
+   .preload-backdrop {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background-color: rgb(255, 255, 255);
+   }
+
+   .preload-body {
+      overflow-y: hidden;
+   }
+
+   .page-preload {
+      background: transparent url(https://cdn.dribbble.com/users/107759/screenshots/2436386/copper-loader.gif) no-repeat center center;
+      position: fixed;
+      z-index: 1000;
+      height: 100vh;
+      width: 100%;
+   }
+   </style>
 </head>
 
 <body <?php body_class(); ?>>
+   <div class="preload-backdrop">
+      <div class="page-preload">
+      </div>
+   </div>

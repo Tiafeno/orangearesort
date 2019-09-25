@@ -2,7 +2,12 @@
 get_header();
 
 $sections = get_field('sections', 'options');
-$args_posts = ['post_type' => 'post', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC'];
+$args_posts = [
+    'post_type' => 'post', 
+    'posts_per_page' => -1, 
+    'orderby' => 'title', 
+    'order' => 'ASC'
+];
 $results = new WP_Query($args_posts);
 
 ?>
@@ -11,7 +16,14 @@ $results = new WP_Query($args_posts);
     .section-container {
         min-height: 240px;
         position: relative;
+        transition: background 1.5s linear;
+        -webkit-transition: background 1.5s linear;
     }
+
+    .section-bg-animate {
+        padding-bottom: 40px;
+    }
+
     #footer-container {
         background-color: black;
         min-height: 250px
@@ -24,7 +36,8 @@ $results = new WP_Query($args_posts);
             var sectionBg = $('.section-bg-animate');
             sectionBg.each((index, element) => {
                 var data = $(element).data();
-                var galleries = data.galleries;
+                var galleries = _.isArray(data.galleries) ? data.galleries : [];
+                if (_.isEmpty(galleries)) return false;
                 $(element).parents('.section-container').css({
                     'min-height': 500,
                     'background': `transparent url(${galleries[0]}) no-repeat center center`,
@@ -34,11 +47,15 @@ $results = new WP_Query($args_posts);
                 setInterval(() => {
                     let index = _.random(0, galleries.length - 1);
                     let url = galleries[index];
-                    $(element).parents('.section-container').css({
-                        'background': `transparent url(${url}) no-repeat center center`,
-                        'background-size': 'cover'
-                    });
-                }, 2000);
+                    let parentSection = $(element).parents('.section-container');
+                    //parentSection.fadeTo('slow', 0.5, function(){
+                        parentSection.css({
+                            'background': `transparent url(${url}) no-repeat center center`,
+                            'background-size': 'cover'
+                        });
+                    //}).fadeTo('slow', 1);
+                    
+                }, 5000);
             });
         })
     })(jQuery);
@@ -123,9 +140,9 @@ $results = new WP_Query($args_posts);
                         }
                     <?php endif; ?>
 
-                    <?php if ($background_image): ?>
+                    <?php if ($background_image): $background_color = $background_color ? $background_color : "#ffffff"; ?>
                         #header_<?= $key ?> .section-content {
-                            background-image: url(<?= $background_image['url'] ?>) no-repeat center center;
+                            background: <?= $background_color ?> url(<?= $background_image['url'] ?>) no-repeat center center;
                             background-size: <?= $background_size ? $background_size : 'cover' ?>;
                         }
                     <?php endif; ?>
@@ -166,14 +183,6 @@ $results = new WP_Query($args_posts);
         
         ?>
 
-        <footer>
-            <div id="footer-container">
-                <div class="container">
-                </div>
-            </div>
-        </footer>
-
-    </div>
-  </div>
+       
 <?php
 get_footer();
