@@ -152,9 +152,10 @@ $results = new WP_Query($args_posts);
                     }
                 </style>
 
-                <?php foreach ($galleries as $image): ?>
-                    <img class="preloading" src="<?= $image ?>" style="display: none" />
-                <?php endforeach; ?>
+                <?php foreach ($galleries as $image):
+                    echo '<img class="preloading" src="'.$image.'" style="display: none" />';
+                    break;
+                endforeach; ?>
 
                 <section id="header_<?= $key ?>" class="section-container">
 
