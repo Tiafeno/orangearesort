@@ -28,19 +28,22 @@
             });
         }
 
+        var loop = setInterval(function () {
+            // the img to watch
+            var $img = $("img.preloading");
+            if (!!$img.length && $img[0].complete) {
+                // clear the timer
+                clearInterval(loop);
+                setLoading(false);
+            }
 
-        // Executer lorsque la page est chargé completement
-        $(window).bind("load", function () {
-            // code here
-            console.log('Image bin load');
-            setLoading(false);
-        });
+        }, 30);
     });
 
     $(window).resize(function () {
         _fixSectionHeader();
-     });
-     _fixSectionHeader();
+    });
+    _fixSectionHeader();
 
     function setLoading(value) {
         var preload = $('.preload-backdrop');
@@ -59,18 +62,12 @@
 
     function _fixSectionHeader() {
         var container = $('#content');
-        var height = container.innerHeight();
         var width = container.innerWidth();
 
-        /**
-         * Permet de corriger la forme wave des sections (en haut)
-         */
+        // Permet de corriger la forme wave des sections (en haut)
         $('.section-header-top').find('img').each(function (index, el) {
-            var imgWidth;
-            var imgHeight;
-
-            imgHeight = $(el).innerHeight();
-            imgWidth = $(el).innerWidth();
+            var imgHeight = $(el).innerHeight();
+            var imgWidth = $(el).innerWidth();
             if (width > imgWidth) {
                 var finalHeight = (width * imgHeight) / imgWidth;
                 $(el).css({
@@ -85,11 +82,8 @@
          * Permet de corriger la forme wave des sections (en bas)
          */
         $('.section-header-bottom').find('img').each(function (index, el) {
-            var imgWidth;
-            var imgHeight;
-
-            imgHeight = $(el).innerHeight();
-            imgWidth = $(el).innerWidth();
+            var imgHeight = $(el).innerHeight();
+            var imgWidth = $(el).innerWidth();
             if (width > imgWidth) {
                 var finalHeight = (width * imgHeight) / imgWidth;
                 $(el).css({

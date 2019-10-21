@@ -152,6 +152,10 @@ $results = new WP_Query($args_posts);
                     }
                 </style>
 
+                <?php foreach ($galleries as $image): ?>
+                    <img class="preloading" src="<?= $image ?>" style="display: none" />
+                <?php endforeach; ?>
+
                 <section id="header_<?= $key ?>" class="section-container">
 
                     <?php if ($type === 2 && $header_top): ?>
