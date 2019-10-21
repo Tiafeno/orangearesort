@@ -91,11 +91,11 @@ $results = new WP_Query($args_posts);
                     $type = intval($type);
                     if ($type === 2) {
                         // WAVE
-                        $header_top = get_field('header_top', get_the_ID());
+                        $header_top    = get_field('header_top', get_the_ID());
                         $header_bottom = get_field('header_bottom', get_the_ID());
                         $background_color = get_field('header_bg_color', get_the_ID());
                         $background_image = get_field('header_bg_img', get_the_ID());
-                        $background_size = get_field('header_bg_size', get_the_ID());
+                        $background_size  = get_field('header_bg_size', get_the_ID());
                     }
 
                     if ($type === 1) {
@@ -177,7 +177,7 @@ $results = new WP_Query($args_posts);
                 $key += $key;
                 $background_color = null;
                 $background_image = null;
-                $background_size = null;
+                $background_size  = null;
             endwhile;
         }
         
