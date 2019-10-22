@@ -34,6 +34,7 @@
             if (!!$img.length && $img[0].complete) {
                 // clear the timer
                 clearInterval(loop);
+                _fixSectionHeader();
                 setLoading(false);
             }
 
@@ -43,8 +44,7 @@
     $(window).resize(function () {
         _fixSectionHeader();
     });
-    _fixSectionHeader();
-
+    
     function setLoading(value) {
         var preload = $('.preload-backdrop');
         if (value) {
