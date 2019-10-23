@@ -104,6 +104,14 @@ $results = new WP_Query($args_posts);
                     }
                 }
                 
+                $detect = new Mobile_Detect();
+                if ($detect->isMobile() && !empty($galleries)) {
+                    shuffle($galleries);
+                    $current_galleries = $galleries;
+                    $galleries = [];
+                    $rand_galleries = array_rand($current_galleries, 1); // Retourn la clé d'entrer
+                    $galleries[] = $current_galleries[$rand_galleries];
+                }
             
         ?>
 
@@ -151,10 +159,11 @@ $results = new WP_Query($args_posts);
                         min-height: 300px
                     }
                 </style>
-
+                <!---  preloading js -->
                 <?php foreach ($galleries as $image):
                     echo '<img class="preloading" src="'.$image.'" style="display: none" />';
                 endforeach; ?>
+                <!-- .end preloading --->
 
                 <section id="header_<?= $key ?>" class="section-container">
 
