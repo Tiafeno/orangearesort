@@ -109,7 +109,7 @@ $results = new WP_Query($args_posts);
                     shuffle($galleries);
                     $current_galleries = $galleries;
                     $galleries = [];
-                    $rand_galleries = array_rand($current_galleries, 1); // Retourn la clé d'entrer
+                    $rand_galleries = array_rand($current_galleries, 1); // Retourne la clé d'entrer
                     $galleries[] = $current_galleries[$rand_galleries];
                 }
             
